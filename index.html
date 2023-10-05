@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apolo - km5</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar and Content -->
+    <div class="container-fluid">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-4"><img class="bi me-2" src="img/logo.png" alt="logo" width="150px"></span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active text-white" aria-current="page">
+                        <img class="bi me-2" src="icons/home.svg" alt="logo">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <img class="bi me-2" src="icons/dashboard.svg" alt="logo">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <img class="bi me-2" src="icons/relatorio.svg" alt="logo">
+                        Relatórios
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <img class="bi me-2" src="icons/servicos.svg" alt="logo">
+                        Serviços
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <img class="bi me-2" src="icons/clientes.svg" alt="logo">
+                        Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <img class="bi me-2" src="icons/clientes.svg" alt="logo">
+                        Funcionários
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <img class="bi me-2" src="icons/propostas.svg" alt="logo">
+                        Propostas
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown fixed-bottom">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>Apolo</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">Configurações</a></li>
+                    <li><a class="dropdown-item" href="#">Contato</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Conteúdo variável -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container mt-4" id="content">
+                <!-- O conteúdo do meio será carregado aqui usando JavaScript -->
+                main
+            </div>
+        </main>
+        <!-- Bootstrap JS (opcional, dependendo do que você precisa) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Seu script JavaScript para carregar o conteúdo aqui -->
+        <script src="script.js"></script>
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="sidebars.js"></script>
+</body>
+
+</html>
