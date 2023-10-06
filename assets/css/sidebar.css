@@ -83,11 +83,11 @@ a {
     grid-template-columns: max-content max-content;
     align-items: center;
     column-gap: 1rem;
-    padding: .5rem 0 .5rem 1.5rem
+    padding: .3rem 0 .5rem 1.5rem
 }
 
 .nav_logo {
-    margin-bottom: 2rem
+    margin-bottom: 1rem
 }
 
 .nav_logo-icon {
@@ -106,7 +106,6 @@ a {
 
 .nav_link {
     position: relative;
-    color: var(--first-color-light);
     margin-bottom: 1.5rem;
     transition: .3s
 }
