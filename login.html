@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="m-5">
+            <div>
+                <img
+                    src="img/apollo color.png"
+                    alt=""
+                    width="50px"
+                    class="d-inline mb-2"
+                />
+                <h2 class="d-inline" id="nome-logo">Apollo</h2>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 d-flex flex-column align-items-center">
+                    <form action="index.html" class="w-50 mb-5" id="formlogin">
+                        <div class="form-group w-100 mb-3">
+                            <h1 class="">
+                                <img src="icons/lock.svg" alt="" class="mb-2" /> Login
+                            </h1>
+                            <label for="" class="m-2">Usuário</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group w-100 mb-3">
+                            <label for="" class="m-2">Senha</label>
+                            <span class="text-danger d-none font-weight-bold" id="capslock">
+                                Capslock Ativado
+                            </span>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="senha" />
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text rounded-0" onclick="visuSenha()" style="cursor: pointer; user-select: none;">
+                                        <img src="icons/olho.svg" alt="" id="olho" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark mb-5">Entrar</button>
+                    </form>
+                </div>
+                <div class="col-6 d-flex flex-column justify-content-end ml-5">
+                    <img src="img/login_img.png" alt="" width="400px" />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const senha = document.querySelector("#senha");
+        const olho = document.querySelector("#olho");
+        let visivel = false;
+
+        function visuSenha() {
+            visivel = !visivel;
+            senha.type = visivel ? "text" : "password";
+            olho.src = visivel ? "icons/olhorisco.svg" : "icons/olho.svg";
+        }
+
+        const spanCapslock = document.querySelector("#capslock");
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document
+                .getElementById("senha")
+                .addEventListener("keypress", function (event) {
+                    var capsLockAtivado =
+                        event.getModifierState &&
+                        event.getModifierState("CapsLock");
+                    if (capsLockAtivado)
+                        spanCapslock.classList.remove("d-none");
+                    else spanCapslock.classList.add("d-none");
+                });
+        });
+    </script>
+</html>

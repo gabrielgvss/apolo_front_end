@@ -1,0 +1,9 @@
+#nome-logo{
+    font-family: Georgia, serif;
+    cursor:pointer;
+    user-select:none;
+}
+
+#formlogin{
+    margin-top: 70px;
+}
