@@ -183,6 +183,7 @@
         <script>
             let main_content = document.querySelector("#main-content");
             function clientes() {
+                history.pushState({}, null, "/clientes")
                 main_content.textContent = ""
                 let clientes = "componentes/clientes.html";
                 render(main_content, clientes, null);
