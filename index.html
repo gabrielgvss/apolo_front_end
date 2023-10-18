@@ -1,95 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apolo - km5</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="assets/css/sidebar.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Apollo-km5</title>
+        <link rel="stylesheet" href="styles.css" />
+        <!-- Bootstrap CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+        />
+        <link rel="stylesheet" href="assets/css/sidebar.css" />
+    </head>
 
-  <body id="body-pd">
-    <header class="header" id="header">
-      <div class="header_toggle">
-        <img src="icons/menu.svg" alt="" class='bx bx-menu' id="header-toggle" style="cursor: pointer;"/>
-      </div>
-    </header>
-    <div class="l-navbar bg-dark" id="nav-bar">
-      <nav class="nav">
-        <div> 
-            <a href="#" class="nav_logo"> <span class="nav_logo-icon" id="logo_name">Km5</span> </a>
-            <div class="nav_list">
-                    <a href="#" class="nav_link active text-white" aria-current="page">
-                        <img class="bi me-2" src="icons/home.svg" alt="logo">
-                        <span class="nav-item"> Home </span>
-                    </a>
-               
-                    <a href="#" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/dashboard.svg" alt="logo">
-                        <span class="nav_name"> Dashboard </span>
-                    </a>
-                
-                    <a href="#" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/relatorio.svg" alt="logo">
-                        <span class="nav_name"> Relatórios </span>
-                    </a>
-                    <a href="#" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/servicos.svg" alt="logo">
-                        <span class="nav_name"> Serviços </span>
-                    </a>
-                    <a href="#" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/clientes.svg" alt="logo">
-                        <span class="nav_name"> Clientes </span>
-                    </a>
-                    <a href="#" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/clientes.svg" alt="logo">
-                        <span class="nav_name"> Funcionários </span>
-                    </a>
-                
-                    <a href="#" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/propostas.svg" alt="logo">
-                        <span class="nav_name"> Propostas </span>
-                    </a>
-                    <a href="login.html" class="nav_link text-white">
-                        <img class="bi me-2" src="icons/sair.svg" alt="logo">
-                        <span class="nav_name"> Sair </span>
-                    </a>
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle">
+                <img
+                    src="icons/menu.svg"
+                    alt=""
+                    class="bx bx-menu"
+                    id="header-toggle"
+                    style="cursor: pointer"
+                />
             </div>
-        </div>
-        </nav>
-        </div>
-        <div class="dropdown fixed-bottom">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle nav_link" id="dropdownUser1" data-bs-toggle="dropdown"  aria-expanded="false" aria-haspopup="true">
-                <img src="img/apollo color.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>Apollo</strong>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                <li><a class="dropdown-item" href="#">Configurações</a></li>
-                <li><a class="dropdown-item" href="#">Contato</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sair</a></li>
-            </ul>
-        </div>
-        
-      </nav>
-    </div>
-    <!--Container Main start-->
-    <div class="height-100 bg-light">
-      <h4>Main Components</h4>
-    </div>
-    <!-- jQuery (antes do Bootstrap) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        </header>
+        <div class="l-navbar bg-dark" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav_logo">
+                        <span class="nav_logo-icon" id="logo_name">Km5</span>
+                    </a>
+                    <div class="nav_list">
+                        <a
+                            href="#"
+                            class="nav_link active text-white"
+                            aria-current="page"
+                        >
+                            <img
+                                class="bi me-2"
+                                src="icons/home.svg"
+                                alt="logo"
+                            />
+                            <span class="nav-item"> Home </span>
+                        </a>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                        <a href="#" class="nav_link text-white">
+                            <img
+                                class="bi me-2"
+                                src="icons/dashboard.svg"
+                                alt="logo"
+                            />
+                            <span class="nav_name"> Dashboard </span>
+                        </a>
 
+                        <a href="#" class="nav_link text-white">
+                            <img
+                                class="bi me-2"
+                                src="icons/relatorio.svg"
+                                alt="logo"
+                            />
+                            <span class="nav_name"> Relatórios </span>
+                        </a>
+                        <a href="#" class="nav_link text-white">
+                            <img
+                                class="bi me-2"
+                                src="icons/servicos.svg"
+                                alt="logo"
+                            />
+                            <span class="nav_name"> Serviços </span>
+                        </a>
+                        <a href="#" class="nav_link text-white" onclick="clientes()">
+                            <img
+                                class="bi me-2"
+                                src="icons/clientes.svg"
+                                alt="logo"
+                            />
+                            <span class="nav_name"> Clientes </span>
+                        </a>
+                        <a href="#" class="nav_link text-white">
+                            <img
+                                class="bi me-2"
+                                src="icons/clientes.svg"
+                                alt="logo"
+                            />
+                            <span class="nav_name"> Funcionários </span>
+                        </a>
 
-    <script src="assets/js/sidebar.js"></script>
-  </body>
+                        <a href="#" class="nav_link text-white">
+                            <img
+                                class="bi me-2"
+                                src="icons/propostas.svg"
+                                alt="logo"
+                            />
+                            <span class="nav_name"> Propostas </span>
+                        </a>
+                        <div class="dropdown-right">
+                            <a
+                                href="#"
+                                class="nav_link text-white"
+                                id="dropdownSair"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                            >
+                                <img
+                                    class="bi me-2"
+                                    src="icons/sair.svg"
+                                    alt="logo"
+                                />
+                                <span class="nav_name"> Sair </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-dark text-small shadow p-3"
+                                aria-labelledby="dropdownSair"
+                            >
+                                <p>Você deseja sair?</p>
+                                <!--tratar logoff-->
+                                <button
+                                    class="btn btn-success"
+                                    onclick="location.href='login.html'"
+                                >
+                                    <span class="text-white">confirmar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown fixed-bottom">
+                    <a
+                        href="#"
+                        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle nav_link"
+                        id="dropdownUser1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <img
+                            src="img/apollo color.png"
+                            alt=""
+                            width="32"
+                            height="32"
+                            class="rounded-circle me-2"
+                        />
+                        <strong>Apollo</strong>
+                    </a>
+                    <ul
+                        class="dropdown-menu dropdown-menu-dark text-small shadow"
+                        aria-labelledby="dropdownUser1"
+                    >
+                        <li>
+                            <a class="dropdown-item" href="#">Configurações</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Contato</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <!--tratar logoff-->
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="login.html"
+                                onclick="sair()"
+                                >Sair</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--Container Main start-->
+        <div class="height-100 bg-light">
+            <div id="main-content" class="mt-4"></div>
+        </div>
+        <!-- jQuery (antes do Bootstrap) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/js/sidebar.js"></script>
+        <script src="assets/js/spa.js"></script>
+        <script>
+            let main_content = document.querySelector("#main-content");
+            function clientes() {
+                main_content.textContent = ""
+                let clientes = "componentes/clientes.html";
+                render(main_content, clientes, null);
+                carregarClientes()
+            }
+        </script>
+    </body>
 </html>
