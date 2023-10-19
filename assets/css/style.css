@@ -17,3 +17,11 @@ a{
   text-decoration: none;
   color: white;
 }
+
+.div-saltar{
+  transition: transform 0.3s ease;
+}
+
+.div-saltar:hover {
+  transform: translateY(-10px);
+}

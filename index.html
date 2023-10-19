@@ -110,7 +110,7 @@
                                     src="icons/sair.svg"
                                     alt="logo"
                                 />
-                                <span class="nav_name"> Sair </span>
+                                <span class="nav_name" style="color: red;"> Sair </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-dark text-small shadow p-3"
@@ -171,7 +171,26 @@
         <!--Container Main start-->
         <div class="height-100 bg-light">
             <div id="main-content" class="mt-4">
-                
+                <div class="container">
+                    <div class="row">
+                        <div class="input-group w-50 mx-auto my-2">
+                            <input type="text" class="form-control" placeholder="nome ou cargo ">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-primary">Pesquisar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <h2 class="mt-5">Admnistração</h2>
+                    <div class="row d-flex flex-wrap" id = "adm">
+
+                    </div>
+                    <h2 class="mt-5">Funcionários</h2>
+                    <div class="row d-flex flex-wrap" id="func">
+
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -189,10 +208,20 @@
             function clientes() {
                 history.pushState({}, null, "/clientes")
                 main_content.textContent = ""
-                let clientes = "componentes/clientes.html";
+                let clientes = "componentes/cliente/clientes.html";
                 render(main_content, clientes, null);
                 carregarClientes()
             }
         </script>
     </body>
+    <script src="assets/js/funcionario/funcionarios.js"></script>
+    <script>
+        let teste = '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
+        let data = JSON.parse(teste);
+        alimentarAdm(data);
+        
+        let teste2 = '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
+        let data2 = JSON.parse(teste2);
+        alimentarFunc(data2);
+    </script>
 </html>
