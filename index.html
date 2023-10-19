@@ -170,7 +170,9 @@
         </div>
         <!--Container Main start-->
         <div class="height-100 bg-light">
-            <div id="main-content" class="mt-4"></div>
+            <div id="main-content" class="mt-4">
+                
+            </div>
         </div>
         
         <!-- jQuery (antes do Bootstrap) -->
@@ -182,7 +184,7 @@
         <script src="assets/js/sidebar.js"></script>
         <script src="assets/js/spa.js"></script>
         <script>
-            window.onload = history.back()
+           // window.onload = history.back()
             let main_content = document.querySelector("#main-content");
             function clientes() {
                 history.pushState({}, null, "/clientes")
