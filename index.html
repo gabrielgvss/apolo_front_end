@@ -229,21 +229,23 @@
             render(main_content, clientes, null);
             carregarClientes();
         }
-        function viewFunc(){
+        function viewFunc() {
             main_content.textContent = "";
-            let funcionarios = "componentes/funcionario/funcionarios.html";
-            render(main_content, funcionarios, null)
-            let teste =
-            '[{"id": 1, "img": "img/apollo color.png", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
-            let data = JSON.parse(teste);
-            const divAdm = document.querySelector("#adm")
-            alimentarAdm(data, divAdm);
-
-            let teste2 =
-                '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
-            let data2 = JSON.parse(teste2);
-            let div = document.querySelector("#func")
-            alimentarFunc(data2, div);
+            fetch("/componentes/funcionario/funcionarios.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    main_content.innerHTML = data;
+                    let teste =
+                        '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
+                    let dataF = JSON.parse(teste);
+                    const divFunc = document.querySelector("#func");
+                    alimentarFunc(dataF, divFunc);
+                    const divAdm = document.querySelector("#adm");
+                    alimentarAdm(dataF, divAdm);
+                })
+                .catch((error) => {
+                    console.error("Erro ao carregar o componente HTML:", error);
+                });
         }
 
         
