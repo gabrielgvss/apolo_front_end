@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Apollo-km5</title>
-        <link rel="stylesheet" href="styles.css" />
+
         <!-- Bootstrap CSS -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
         <link
@@ -12,6 +12,7 @@
             href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
         />
         <link rel="stylesheet" href="assets/css/sidebar.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
     </head>
 
     <body id="body-pd">
@@ -71,7 +72,11 @@
                             />
                             <span class="nav_name"> Serviços </span>
                         </a>
-                        <a href="#" class="nav_link text-white" onclick="clientes()">
+                        <a
+                            href="#"
+                            class="nav_link text-white"
+                            onclick="clientes()"
+                        >
                             <img
                                 class="bi me-2"
                                 src="icons/clientes.svg"
@@ -79,14 +84,40 @@
                             />
                             <span class="nav_name"> Clientes </span>
                         </a>
-                        <a href="#" class="nav_link text-white">
-                            <img
-                                class="bi me-2"
-                                src="icons/clientes.svg"
-                                alt="logo"
-                            />
-                            <span class="nav_name"> Funcionários </span>
-                        </a>
+                        <div class="dropdown-rigth">
+                            <a
+                                href="#"
+                                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle nav_link"
+                                id="dropdownFunc"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                            >
+                                <img
+                                    class="bi me-2"
+                                    src="icons/clientes.svg"
+                                    alt="logo"
+                                />
+                                <span class="nav_name"> Funcionários </span>
+                            </a>
+                            <ul
+                                href="#"
+                                class="dropdown-menu dropdown-menu-dark text-small shadow"
+                                aria-labelledby="dropdownFunc"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >Cadastrar Funcionário</a
+                                    >
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="viewFunc()">
+                                        Visualizar Funcionários</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
 
                         <a href="#" class="nav_link text-white">
                             <img
@@ -110,7 +141,9 @@
                                     src="icons/sair.svg"
                                     alt="logo"
                                 />
-                                <span class="nav_name" style="color: red;"> Sair </span>
+                                <span class="nav_name" style="color: red">
+                                    Sair
+                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-dark text-small shadow p-3"
@@ -171,29 +204,10 @@
         <!--Container Main start-->
         <div class="height-100 bg-light">
             <div id="main-content" class="mt-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="input-group w-50 mx-auto my-2">
-                            <input type="text" class="form-control" placeholder="nome ou cargo ">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-primary">Pesquisar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <h2 class="mt-5">Admnistração</h2>
-                    <div class="row d-flex flex-wrap" id = "adm">
-
-                    </div>
-                    <h2 class="mt-5">Funcionários</h2>
-                    <div class="row d-flex flex-wrap" id="func">
-
-                    </div>
-                </div>
+                
             </div>
         </div>
-        
+
         <!-- jQuery (antes do Bootstrap) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -202,26 +216,36 @@
 
         <script src="assets/js/sidebar.js"></script>
         <script src="assets/js/spa.js"></script>
-        <script>
-           // window.onload = history.back()
-            let main_content = document.querySelector("#main-content");
-            function clientes() {
-                history.pushState({}, null, "/clientes")
-                main_content.textContent = ""
-                let clientes = "componentes/cliente/clientes.html";
-                render(main_content, clientes, null);
-                carregarClientes()
-            }
-        </script>
+    
     </body>
     <script src="assets/js/funcionario/funcionarios.js"></script>
     <script>
-        let teste = '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
-        let data = JSON.parse(teste);
-        alimentarAdm(data);
+        // window.onload = history.back()
+        let main_content = document.querySelector("#main-content");
+        function clientes() {
+            history.pushState({}, null, "/clientes");
+            main_content.textContent = "";
+            let clientes = "componentes/cliente/clientes.html";
+            render(main_content, clientes, null);
+            carregarClientes();
+        }
+        function viewFunc(){
+            main_content.textContent = "";
+            let funcionarios = "componentes/funcionario/funcionarios.html";
+            render(main_content, funcionarios, null)
+            let teste =
+            '[{"id": 1, "img": "img/apollo color.png", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
+            let data = JSON.parse(teste);
+            const divAdm = document.querySelector("#adm")
+            alimentarAdm(data, divAdm);
+
+            let teste2 =
+                '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
+            let data2 = JSON.parse(teste2);
+            let div = document.querySelector("#func")
+            alimentarFunc(data2, div);
+        }
+
         
-        let teste2 = '[{"id": 1, "img": "asds", "nome": "kaua", "cargo": "dono"}, {"id": 2, "img": "asds", "nome": "kaua", "cargo": "dono"}]';
-        let data2 = JSON.parse(teste2);
-        alimentarFunc(data2);
     </script>
 </html>
