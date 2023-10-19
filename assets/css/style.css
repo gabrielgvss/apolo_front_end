@@ -7,3 +7,8 @@
 #formlogin{
     margin-top: 70px;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
