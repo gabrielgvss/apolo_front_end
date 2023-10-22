@@ -3,63 +3,73 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="assets/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/style.css" />
         <title>Apollo-login</title>
     </head>
     <body>
-        <header class="m-5">
-            <div>
-                <img
-                    src="img/apollo color.png"
-                    alt=""
-                    width="50px"
-                    class="d-inline mb-2"
-                />
-                <h2 class="d-inline" id="nome-logo">Apollo</h2>
-            </div>
-        </header>
-        <div class="container pt-5">
-            <div class="row justify-content-center">
-                <div class="col-6 my-auto">
-                    <h1 class="ml-3">
-                        <img src="icons/lock.svg" alt="lock" class="mx-5"> <p style="font-size: 100px">Login</p>
-                    </h1>
+        <header class="m-5 justify-content-center"></header>
+        <div class="container card border-0 bg-transparent">
+            <div class="card border-0 py-5 w-50 mx-auto" id="formlogin">
+                <div class="mx-auto">
+                    <img
+                        src="img/apollo color.png"
+                        alt=""
+                        width="50px"
+                        class="d-inline mb-2"
+                    />
+                    <h2 class="d-inline" id="nome-logo">Apollo</h2>
                 </div>
-                <div class="col-6">
-                    <form action="index.html" class="w-75" id="formlogin">
-                        <div class="form-group w-100">
-                            <label for="" class="my-3" style="font-size: 20px">Usuário</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                        <div class="form-group w-100">
-                            <label for="" class="my-3" style="font-size: 20px">Senha</label>
-                            <span class="text-danger d-none font-weight-bold" id="capslock">
-                                Capslock Ativado
-                            </span>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="senha" />
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text rounded-0" onclick="visuSenha()" style="cursor: pointer; user-select: none;">
-                                        <img src="icons/olho.svg" alt="" id="olho" />
-                                    </div>
+                <div class="mx-auto mt-4 w-100">
+                    <div class="form-group w-75 mx-auto mt-3">
+                        <label for="" class="my-2" style="font-size: 20px"
+                            >Usuário</label
+                        >
+                        <input type="text" class="form-control" style="height: 40px;" />
+                    </div>
+                    <div class="form-group w-75 mx-auto mt-3">
+                        <label for="" class="my-2" style="font-size: 20px"
+                            >Senha</label
+                        >
+                        <span
+                            class="text-danger d-none font-weight-bold mx-2"
+                            id="capslock"
+                        >
+                            Capslock Ativado
+                        </span>
+                        <div class="input-group">
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="senha"
+                            />
+                            <div class="input-group-prepend">
+                                <div
+                                    class="input-group-text rounded-0"
+                                    onclick="visuSenha()"
+                                    style="cursor: pointer; user-select: none"
+                                >
+                                    <img src="icons/olho.svg" alt="" id="olho" />
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-dark mb-5 my-4">Entrar</button>
-                    </form>
+                        <span class="text-danger d-none">Informações de Login incorretas</span>
+                    </div>
                 </div>
+                <button class="btn btn-success w-25 mb-5 mt-5" style="font-size: 20px" onclick="logar()">Entrar</button>
             </div>
         </div>
-       <div id="footer">
-
-       </div>
+        <div id="footer"></div>
     </body>
     <script src="assets/js/spa.js"></script>
+    <script src="assets/js/login.js"></script>
     <script>
+        
+        function logar(){
+            const inputs = document.querySelectorAll('input')
+            validacao(inputs[0], inputs[1])
+        }
+
         const senha = document.querySelector("#senha");
         const olho = document.querySelector("#olho");
         let visivel = false;
@@ -84,8 +94,8 @@
                     else spanCapslock.classList.add("d-none");
                 });
         });
-        const footer = document.querySelector('#footer')
-        const footer_comp = "componentes/footer.html"
+        const footer = document.querySelector("#footer");
+        const footer_comp = "componentes/footer.html";
         window.onload = render(footer, footer_comp, null);
     </script>
 </html>

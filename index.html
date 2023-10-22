@@ -64,14 +64,40 @@
                             />
                             <span class="nav_name"> Relatórios </span>
                         </a>
-                        <a href="#" class="nav_link text-white">
-                            <img
-                                class="bi me-2"
-                                src="icons/servicos.svg"
-                                alt="logo"
-                            />
-                            <span class="nav_name"> Serviços </span>
-                        </a>
+                        <div class="dropdown-rigth">
+                            <a
+                                href="#"
+                                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle nav_link"
+                                id="dropdownServ"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                            >
+                                <img
+                                    class="bi me-2"
+                                    src="icons/servicos.svg"
+                                    alt="logo"
+                                />
+                                <span class="nav_name"> Serviços </span>
+                            </a>
+                            <ul
+                                href="#"
+                                class="dropdown-menu dropdown-menu-dark text-small shadow"
+                                aria-labelledby="dropdownServ"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="cadastrarServ()"
+                                        >Novo Serviço</a
+                                    >
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="viewServ()">
+                                        Visualizar Serviços</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
                         <a
                             href="#"
                             class="nav_link text-white"
@@ -152,7 +178,7 @@
                                 <p>Você deseja sair?</p>
                                 <!--tratar logoff-->
                                 <button
-                                    class="btn btn-success"
+                                    class="btn btn-danger"
                                     onclick="location.href='login.html'"
                                 >
                                     <span class="text-white">confirmar</span>
@@ -202,7 +228,7 @@
             </nav>
         </div>
         <!--Container Main start-->
-        <div class="height-100 bg-light">
+        <div class="height-100">
             <div id="main-content" class="mt-4">
                 
             </div>
